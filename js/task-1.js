@@ -259,23 +259,105 @@
  * результати виклику коллбека.
  */
 
-function each(array, callback) {
-  const numbers = [];
+// function each(array, callback) {
+//   const numbers = [];
   
-  for (const item of array) {
-    const res = callback(item);
-    numbers.push(res);
-  }
-  return numbers;
-}
+//   for (const item of array) {
+//     const res = callback(item);
+//     numbers.push(res);
+//   }
+//   return numbers;
+// }
 
-const result1 = each([64, 49, 36, 25, 16], function (value) {
-  // value
-  return value * 2;
-});
-console.log(result1)
+// const result1 = each([64, 49, 36, 25, 16], function (value) {
+//   // value
+//   return value * 2;
+// });
+// console.log(result1)
 
-const result2 = each([64, 49, 36, 25, 16], function (value) {
-  return value - 10;
-});
-console.log(result2);
+// const result2 = each([64, 49, 36, 25, 16], function (value) {
+//   return value - 10;
+// });
+// console.log(result2);
+
+
+// function changeEven(numbers, value) {
+//   let newArray = [];
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] % 2 === 0) {
+//       newArray.push(numbers[i] + value);
+//     } else {
+//       newArray.push(numbers[i]);
+//     }
+//   }
+//   return newArray;
+// };
+
+// console.log(changeEven([2, 8, 3, 7, 4, 6], 10))
+
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+
+// const planetsInUpperCase = planets.map(planet => planet.toUpperCase());
+// console.log(planetsInUpperCase); // ["EARTH", "MARS", "VENUS", "JUPITER"]
+
+// const planetsInLowerCase = planets.map(planet => planet.toLowerCase());
+// console.log(planetsInLowerCase); // ["earth", "mars", "venus", "jupiter"]
+
+// // Оригинальный массив не изменился
+// console.log(planets); // ["Earth", "Mars", "Venus", "Jupiter"]
+
+
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+//   { name: "Houston", score: 64 },
+// ];
+
+// const names = students.map(student => student.name);
+// console.log(names); // ["Mango", "Poly", "Ajax", "Kiwi", "Houston"]
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+
+// const MIN_RATING = 8;
+// const AUTHOR = "Bernard Cornwell";
+
+// const topRatedBooks = books.filter(book => book.rating >= MIN_RATING);
+// const booksByAuthor = books.filter(book => book.author === AUTHOR);
+
+// console.log(topRatedBooks);
+// console.log(booksByAuthor);
+
+
+const players = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+
+const totalAveragePlaytimePerGame = players.reduce((acc, player) => {
+  const averagePlaytimePerGame = player.playtime / player.gamesPlayed;
+  return acc + averagePlaytimePerGame;
+}, 0);
+
+console.log(totalAveragePlaytimePerGame);
