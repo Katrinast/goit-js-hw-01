@@ -348,16 +348,61 @@
 // console.log(booksByAuthor);
 
 
+// const players = [
+//   { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//   { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//   { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//   { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+
+// const totalAveragePlaytimePerGame = players.reduce((acc, player) => {
+//   const averagePlaytimePerGame = player.playtime / player.gamesPlayed;
+//   return acc + averagePlaytimePerGame;
+// }, 0);
+
+// console.log(totalAveragePlaytimePerGame);
+
+// const salary = {
+//   mango: 100,
+//   poly: 50,
+//   ajax: 150,
+// };
+
+// const salaries = Object.values(salary);
+// console.log('salaries:', salaries);
+
+// const totalSalary = salaries.reduce((acc, item) => {
+//   return acc + item;
+// });
+
+// console.log(totalSalary);
+
+
+
+/**
+ * Рахуємо загальну кількість годин
+ */
+
 const players = [
-  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
-  { name: "Poly", playtime: 469, gamesPlayed: 2 },
-  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
-  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+  { id: 'player-1', name: 'Mango', timePlayed: 310, online: false },
+  { id: 'player-2', name: 'Poly', timePlayed: 470, online: true },
+  { id: 'player-3', name: 'Kiwi', timePlayed: 230, online: true },
+  { id: 'player-4', name: 'Ajax', timePlayed: 150, online: false },
+  { id: 'player-5', name: 'Chelsey', timePlayed: 80, online: true },
 ];
 
-const totalAveragePlaytimePerGame = players.reduce((acc, player) => {
-  const averagePlaytimePerGame = player.playtime / player.gamesPlayed;
-  return acc + averagePlaytimePerGame;
-}, 0);
+let totalTime = 0;
 
-console.log(totalAveragePlaytimePerGame);
+for (i = 0; i < players.length; i++) {
+  const item = players[i];
+  // console.log('item:', item.timePlayed);
+  totalTime += item.timePlayed;
+}
+
+console.log('Total time with for:', totalTime);
+
+const totalTimePlayed = players.reduce((acc, item) => {
+  return acc + item.timePlayed;
+}, 0)
+
+console.log(totalTimePlayed);
