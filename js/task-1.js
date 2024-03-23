@@ -383,26 +383,79 @@
  * Рахуємо загальну кількість годин
  */
 
-const players = [
-  { id: 'player-1', name: 'Mango', timePlayed: 310, online: false },
-  { id: 'player-2', name: 'Poly', timePlayed: 470, online: true },
-  { id: 'player-3', name: 'Kiwi', timePlayed: 230, online: true },
-  { id: 'player-4', name: 'Ajax', timePlayed: 150, online: false },
-  { id: 'player-5', name: 'Chelsey', timePlayed: 80, online: true },
-];
+//
 
-let totalTime = 0;
 
-for (i = 0; i < players.length; i++) {
-  const item = players[i];
-  // console.log('item:', item.timePlayed);
-  totalTime += item.timePlayed;
-}
+//Напиши скрипт, який для об'єкта user,
+//Послідовно:
+//1 додати поле mood зі значенням 'happy'
+//2 замінити hobby на 'skydiving'
+//3 замінити значення premium на false
+//4 виводити вміст об'єкта user у форматі
+//ключ:значення використовуючи Object.keys() і for...of
 
-console.log('Total time with for:', totalTime);
 
-const totalTimePlayed = players.reduce((acc, item) => {
-  return acc + item.timePlayed;
-}, 0)
 
-console.log(totalTimePlayed);
+//Напишіть ф-цію calcTotalPrice(stones, stonesName),
+//яка приймає масив об'єктів і
+//Рядок з назвою каменю.
+//Функція вважає, що м повертає загальну вартість каменів
+//з ​​таким ім'ям, ціною та кількістю з об'єкта
+
+// const stones = [
+// { name: "Смарагд", price: 1300, quantity: 4 },
+// { name: "Діамант", price: 2700, quantity: 6 },
+// { name: "Сапфір", price: 400, quantity: 7},
+// { name: "Щебінь", price: 150, quantity: 100 },
+//];
+
+//Напишіть ф-цію calcTotalPrice(stones, stonesName),
+//яка приймає масив об'єктів і
+//Рядок з назвою каменю.
+//Функція вважає, що м повертає загальну вартість каменів
+//з ​​таким ім'ям, ціною та кількістю з об'єкта
+// const stones = [
+// { name: "Смарагд", price: 1300, quantity: 4 },
+// { name: "Діамант", price: 2700, quantity: 6 },
+// { name: "Сапфір", price: 400, quantity: 7},
+// { name: "Щебінь", price: 150, quantity: 100 },
+// ];
+
+// const calcTotalPrice = (stones, stonesName) => {
+//   return stones.forEach(function (stone, index) {
+  
+// })
+// };
+
+// calcTotalPrice(stones, "Діамант");
+
+//Напишіть дві функції
+//makeProduct(name, price, callback) - приймає
+//ім'я та ціну товару, а також callback.
+//Функція створює об'єкт товару, додаючи йому унікальний
+//ідентифікатор як id і викликає callback
+//Передаючи йому створений об'єкт.
+//showProduct(product) - коллбек приймаючий об'єкт
+//продукту і логірующий їх у консоль
+const products = [];
+const makeProduct = (name, price, callback) => {
+  const product = {
+    name,
+    price,
+    id: Math.random(),
+  };
+  callback(product);
+};
+
+const showProduct = product => {
+  console.log(product);
+  products.push(product);
+
+};
+
+makeProduct("iphone", 1000, showProduct);
+makeProduct("samsung", 800, showProduct);
+makeProduct("xiomi", 500, showProduct);
+console.log(products);
+
+
