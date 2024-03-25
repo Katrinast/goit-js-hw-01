@@ -437,25 +437,25 @@
 //Передаючи йому створений об'єкт.
 //showProduct(product) - коллбек приймаючий об'єкт
 //продукту і логірующий їх у консоль
-const products = [];
-const makeProduct = (name, price, callback) => {
-  const product = {
-    name,
-    price,
-    id: Math.random(),
-  };
-  callback(product);
-};
+// const products = [];
+// const makeProduct = (name, price, callback) => {
+//   const product = {
+//     name,
+//     price,
+//     id: Math.random(),
+//   };
+//   callback(product);
+// };
 
-const showProduct = product => {
-  console.log(product);
-  products.push(product);
+// const showProduct = product => {
+//   console.log(product);
+//   products.push(product);
 
-};
+// };
 
-makeProduct("iphone", 1000, showProduct);
-makeProduct("samsung", 800, showProduct);
-makeProduct("xiomi", 500, showProduct);
-console.log(products);
+// makeProduct("iphone", 1000, showProduct);
+// makeProduct("samsung", 800, showProduct);
+// makeProduct("xiomi", 500, showProduct);
+// console.log(products);
 
 
