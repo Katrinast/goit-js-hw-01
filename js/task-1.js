@@ -459,3 +459,23 @@
 // console.log(products);
 
 
+// const car = {
+//   brand: "Wolsvagen",
+//   getModel: function() {
+//     console.log("Модель:", this.model, ",Марка:", this.brand);
+//   },
+// };
+
+// car.model = "Golf";
+// car.getModel(); // Модель: Camry, Марка: Toyota
+
+// const person = {
+//   name: "Kate",
+//   introduce: function () {
+//     console.log("Привет, меня зовут", this.name);
+//   }
+// };
+
+// person.introduce();
+
+
